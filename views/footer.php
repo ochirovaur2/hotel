@@ -23,7 +23,33 @@
         }
       }
       ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlNavBar));
-       
+      window.onresize = ()=> {
+			if(document.body.clientWidth >= 758) {
+				document.querySelector("#show-menu-btn").style.display = "none";
+				document.querySelector("#hide-menu-btn").style.display = "none";
+				document.querySelector(".menu").style.display = "block";
+			} else {
+				document.querySelector("#show-menu-btn").style.display = "block";
+				document.querySelector(".menu").style.display = "none";
+			}
+			
+		}
+		document.querySelector("#show-menu-btn").onclick = ()=> {
+			
+			document.querySelector(".menu").style.display = "block";
+			
+			document.querySelector("#hide-menu-btn").style.display = "block";
+			document.querySelector("#show-menu-btn").style.display = "none";
+				
+		}
+		document.querySelector("#hide-menu-btn").onclick = ()=> {
+			
+			document.querySelector(".menu").style.display = "none";
+			
+			document.querySelector("#show-menu-btn").style.display = "block";
+			document.querySelector("#hide-menu-btn").style.display = "none";
+				
+		}
       
       
   </script>
